@@ -1,0 +1,2657 @@
+
+<!DOCTYPE html>
+<html lang="en" class="team">
+
+<!--html header-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="7OqeiBCQ94Kx4h5kpc8aPnzP4rhkJrKrpOPl6Esm" id="meta-csrf" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Nacional Code Casa</title>
+
+    <!--BASEURL-->
+    <base href="http://crm2.nacionalcode.tech" target="_self">
+
+    <!--JQUERY & OTHER HEADER JS-->
+    <script src="public/vendor/js/vendor.header.js?v=2021-05-11"></script>
+
+    <!--BOOTSTRAP-->
+    <link href="public/vendor/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="public/vendor/js/html5shiv/html5shiv.js"></script>
+    <script src="public/vendor/js/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <!--GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"
+        type="text/css">
+
+
+    <!--VENDORS CSS-->
+    <link rel="stylesheet" href="public/vendor/css/vendor.css?v=2021-05-11">
+
+    <!--ICONS-->
+    <link rel="stylesheet" href="public/vendor/fonts/growcrm-icons/styles.css?v=2021-05-11">
+
+    <!--THEME STYLE-->
+    <link href="public/themes/default/css/style.css?v=2021-05-11 " rel="stylesheet">
+
+    <!--USERS CUSTON CSS FILE-->
+    <link href="public/css/custom.css?v=2021-05-11" rel="stylesheet">
+
+    <!-- Favicon icon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="public/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="public/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="public/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="public/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="public/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="public/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="public/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="public/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="public/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="public/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!--SET DYNAMIC VARIABLE IN JAVASCRIPT-->
+    <script type="text/javascript">
+        //name space & settings
+        NX = (typeof NX == 'undefined') ? {} : NX;
+        NXJS = (typeof NXJS == 'undefined') ? {} : NXJS;
+        NXLANG = (typeof NXLANG == 'undefined') ? {} : NXLANG;
+        NXINVOICE = (typeof NXINVOICE == 'undefined') ? {} : NXINVOICE;
+        NX.data = (typeof NX.data == 'undefined') ? {} : NX.data;
+
+        NXINVOICE.DATA = {};
+        NXINVOICE.DOM = {};
+        NXINVOICE.CALC = {};
+
+        //variables
+        NX.site_url = "http://crm2.nacionalcode.tech";
+        NX.csrf_token = "7OqeiBCQ94Kx4h5kpc8aPnzP4rhkJrKrpOPl6Esm";
+        NX.system_language = "spanish";
+        NX.date_format = "m-d-Y";
+        NX.date_picker_format = "mm-dd-yyyy";
+        NX.date_moment_format = "MM-DD-YYYY";
+        NX.upload_maximum_file_size = "5000";
+        NX.settings_system_currency_symbol = "$";
+        NX.settings_system_decimal_separator =
+            ".";
+        NX.settings_system_thousand_separator =
+            ",";
+        NX.settings_system_currency_position = "left";
+        NX.show_action_button_tooltips = "1";
+        NX.notification_position = "bottomLeft";
+        NX.notification_error_duration = "5000";
+        NX.notification_success_duration = "3000";
+        NX.session_login_popup = "enabled";
+
+
+        //javascript console debug modes
+        NX.debug_javascript = "";
+
+        //popover template
+        NX.basic_popover_template = '<div class="popover card-popover" role="tooltip">' +
+            '<span class="popover-close" onclick="$(this).closest(\'div.popover\').popover(\'hide\');" aria-hidden="true">' +
+            '<i class="ti-close"></i></span>' +
+            '<div class="popover-header"></div><div class="popover-body" id="popover-body"></div></div>';
+
+        //lang - used in .js files
+        NXLANG.delete_confirmation = "Eliminar confirmación";
+        NXLANG.are_you_sure_delete = "¿Está seguro de que desea eliminar este elemento?";
+        NXLANG.cancel = "Cancelar";
+        NXLANG.continue = "Seguir";
+        NXLANG.file_too_big = "El archivo es demasiado grande";
+        NXLANG.maximum = "Máximo";
+        NXLANG.generic_error = "Se encontró un error al procesar su solicitud";
+        NXLANG.drag_drop_not_supported = "Su navegador no admite arrastrar y soltar";
+        NXLANG.use_the_button_to_upload = "Usa el botón para subir";
+        NXLANG.file_type_not_allowed = "El tipo de archivo no está permitido";
+        NXLANG.cancel_upload = "Cancelar carga";
+        NXLANG.remove_file = "Remover archivo";
+        NXLANG.maximum_upload_files_reached = "Se alcanzó el máximo de archivos permitidos";
+        NXLANG.upload_maximum_file_size = "lang.upload_maximum_file_size";
+        NXLANG.upload_canceled = "Subida cancelada";
+        NXLANG.are_you_sure = "¿Estás seguro?";
+        NXLANG.image_dimensions_not_allowed = "No se permiten las dimensiones de las imágenes";
+        NXLANG.ok = "Okay";
+        NXLANG.cancel = "Cancelar";
+        NXLANG.close = "Cerca";
+        NXLANG.system_default_category_cannot_be_deleted =
+            "Esta es una categoría predeterminada del sistema y no se puede eliminar";
+        NXLANG.default_category = "Categoría predeterminada";
+        NXLANG.select_atleast_one_item = "Debes seleccionar al menos un artículo";
+        NXLANG.invalid_discount = "El descuento no es válido";
+        NXLANG.add_lineitem_items_first = "Primero agregue productos de factura";
+        NXLANG.fixed = "Fijo";
+        NXLANG.percentage = "Porcentaje";
+        NXLANG.action_not_completed_errors_found = "No se ha podido completar la solicitud";
+        NXLANG.selected_expense_is_already_on_invoice =
+            "Uno de los gastos seleccionados ya está en la factura";
+        NXLANG.please_wait = "Por favor espera...";
+        NXLANG.invoice_time_unit = "Hora";
+    </script>
+
+    <!--boot js-->
+    <script src="public/js/core/head.js?v=2021-05-11"></script>
+
+    <!--stripe payments js-->
+    
+    <!--razorpay payments js-->
+    
+    <!--[note: no sanitizing required] for this trusted content, which is added by the admin-->
+    
+</head><!--html header-->
+
+<body id="main-body"
+    class="loggedin fix-header card-no-border fix-sidebar   home">
+
+    <!--main wrapper-->
+    <div id="main-wrapper">
+
+
+        <!---------------------------------------------------------------------------------------
+            [NEXTLOOP}
+             always collapse left menu for small devices
+            (NB: this code is in the correct place. It must run before menu is added to DOM)
+         --------------------------------------------------------------------------------------->
+
+        <!--top nav-->
+        <header class="topbar">
+
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+
+        <div class="navbar-header">
+
+
+                        <!--logo-->
+            <div class="sidenav-menu-item logo m-t-0">
+                <a class="navbar-brand" href="/home">
+                    <img src="http://crm2.nacionalcode.tech/storage/logos/app/logo-small.png?v=1630643869" alt="homepage" class="logo-small" />
+                    <img src="http://crm2.nacionalcode.tech/storage/logos/app/logo.png?v=1630643869" alt="homepage" class="logo-large" />
+                </a>
+            </div>
+                    </div>
+
+
+        <div class="navbar-collapse header-overlay" id="main-top-nav-bar">
+
+            <div class="page-wrapper-overlay js-toggle-side-panel hidden" data-target=""></div>
+
+            <ul class="navbar-nav mr-auto">
+
+                <!--left menu toogle (hamburger menu) - main application -->
+                                <li class="nav-item main-hamburger-menu">
+                    <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
+                        <i class="sl-icon-menu"></i>
+                    </a>
+                </li>
+                <li class="nav-item main-hamburger-menu">
+                    <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark update-user-ux-preferences"
+                        data-type="leftmenu" data-progress-bar="hidden" data-url=""
+                        data-url-temp="http://crm2.nacionalcode.tech/team/updatepreferences"
+                        data-preference-type="leftmenu" href="javascript:void(0)">
+                        <i class="sl-icon-menu"></i>
+                    </a>
+                </li>
+                
+
+                <!--left menu toogle (hamburger menu) - settings section -->
+                
+                <!--timer-->
+                                <li class="nav-item dropdown hidden-xs-down my-timer-container hidden"
+                    id="my-timer-container-topnav">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="timer-container"><i class="ti-timer font-18"></i>
+                            <span class="my-timer-time-topnav"
+                                id="my-timer-time-topnav">00<span class="timer-deliminator">:</span>00</span></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left">
+                        <div class="active-timer-topnav">
+                            <div class="x-heading">Active Timer</div>
+                                                        <div class="x-task">No se pudo encontrar la tarea</div>
+                            <div class="x-button"><button type="button"
+                                    class="btn waves-effect waves-light btn-sm btn-danger js-timer-button js-ajax-request timer-stop-button"
+                                    data-url="http://crm2.nacionalcode.tech/tasks/timer/stop?source=topnav"
+                                    data-form-id="tasks-list-table"
+                                    data-progress-bar='hidden'>Detener temporizador</button>
+                            </div>
+                                                    </div>
+                    </div>
+                </li>
+                
+
+
+                <!--[UPCOMING] search icon-->
+                <li class="nav-item hidden-xs-down search-box hidden">
+                    <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                        <i class="icon-Magnifi-Glass2"></i>
+                    </a>
+                    <form class="app-search">
+                        <input type="text" class="form-control" placeholder="Search & enter">
+                        <a class="srh-btn">
+                            <i class="ti-close"></i>
+                        </a>
+                    </form>
+                </li>
+            </ul>
+
+
+            <!--RIGHT SIDE-->
+            <ul class="navbar-nav navbar-top-right my-lg-0" id="right-topnav-navbar">
+
+                <!-- event notifications -->
+                <li class="nav-item dropdown" id="topnav-notification-dropdown"
+                    data-url="http://crm2.nacionalcode.tech/events/topnav?eventtracking_status=unread" data-progress-bar='hidden'
+                    data-loading-target="topnav-events-container">
+                    <a class="nav-link dropdown-toggle p-t-10 font-23 waves-dark" href="javascript:void(0)"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="sl-icon-bell"></i>
+                        <div class="notify hidden"
+                            id="topnav-notification-icon">
+                            <span class="heartbit"></span>
+                            <span class="point"></span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown top-nav-events">
+                        <ul>
+                            <li>
+                                <div class="drop-title">Notificaciones</div>
+                            </li>
+                            <li>
+                                <!--events container-->
+                                <div class="message-center" id="topnav-events-container">
+                                    <!--events added dynamically here-->
+                                </div>
+                            </li>
+                            <li class="hidden" id="topnav-events-container-footer">
+                                <a class="nav-link text-center " href="javascript:void(0);"
+                                    id="topnav-notification-mark-all-read"
+                                    data-url="http://crm2.nacionalcode.tech/events/mark-allread-my-events" data-progress-bar='hidden'>
+                                    <strong>Descartar todas las notificaciones</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--notifications -->
+
+                <!-- record time -->
+                                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-dark font-22 p-t-9 p-r-10 edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                        href="#" id="32" data-toggle="modal" data-target="#commonModal"
+                        data-modal-title="Registre su tiempo de trabajo"
+                        data-url="http://crm2.nacionalcode.tech/timesheets/create" data-action-url="http://crm2.nacionalcode.tech/timesheets"
+                        data-modal-size="modal-sm" data-loading-target="commonModalBody" data-action-method="POST"
+                        aria-expanded="false">
+                        <i class="ti-timer"></i>
+                    </a>
+                </li>
+                
+                <!-- settings -->
+                                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-dark font-22 p-t-10 p-r-10" href="/settings" id="32"
+                        aria-expanded="false">
+                        <i class="sl-icon-settings"></i>
+                    </a>
+                </li>
+                
+                <!-- add content -->
+                                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="mdi mdi-plus-circle-multiple-outline text-danger font-28"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+
+                        <!-- client -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal" data-url="http://crm2.nacionalcode.tech/clients/create"
+                            data-loading-target="commonModalBody"
+                            data-modal-title="Agregar cliente"
+                            data-action-url="http://crm2.nacionalcode.tech/clients" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="sl-icon-people"></i> Cliente</a>
+                        
+                        <!-- project -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal" data-url="http://crm2.nacionalcode.tech/projects/create"
+                            data-loading-target="commonModalBody"
+                            data-modal-title="Crear un nuevo proyecto"
+                            data-action-url="http://crm2.nacionalcode.tech/projects" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="ti-folder"></i> Proyecto</a>
+                        
+                        <!-- task -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/tasks/create?ref=quickadd" data-loading-target="commonModalBody"
+                            data-modal-title="Agregar una nueva tarea"
+                            data-action-url="http://crm2.nacionalcode.tech/tasks?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="ti-menu-alt"></i> Tarea</a>
+                        
+                        <!-- lead -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/leads/create?ref=quickadd" data-loading-target="commonModalBody"
+                            data-modal-title="Agregar cliente potencial"
+                            data-action-url="http://crm2.nacionalcode.tech/leads?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="sl-icon-call-in"></i> Dirigir</a>
+                        
+                        <!-- invoice -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/invoices/create?ref=quickadd" data-loading-target="commonModalBody"
+                            data-modal-title="Crear una nueva factura"
+                            data-action-url="http://crm2.nacionalcode.tech/invoices?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="sl-icon-doc"></i> Factura</a>
+                        
+                        <!-- subscription -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/subscriptions/create?ref=quickadd"
+                            data-loading-target="commonModalBody"
+                            data-modal-title="Crea una nueva suscripción"
+                            data-action-url="http://crm2.nacionalcode.tech/subscriptions?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody"
+                            data-action-ajax-class="js-ajax-ux-request" data-project-progress="0">
+                            <i class="sl-icon-layers"></i> Suscripción</a>
+                        
+
+                        <!-- estimate -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/estimates/create?ref=quickadd" data-loading-target="commonModalBody"
+                            data-modal-title="Cree una nueva estimación"
+                            data-action-url="http://crm2.nacionalcode.tech/estimates?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="sl-icon-calculator"></i> Estimar</a>
+                        
+
+                        <!-- expense -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/expenses/create?ref=quickadd" data-loading-target="commonModalBody"
+                            data-modal-title="Agregar un nuevo gasto"
+                            data-action-url="http://crm2.nacionalcode.tech/expenses?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="ti-receipt"></i> Gastos</a>
+                        
+                        <!-- payment -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal"
+                            data-url="http://crm2.nacionalcode.tech/payments/create?ref=quickadd" data-loading-target="commonModalBody"
+                            data-modal-title="Agregar pago"
+                            data-action-url="http://crm2.nacionalcode.tech/payments?ref=quickadd" data-action-method="POST"
+                            data-action-ajax-loading-target="commonModalBody" data-save-button-class=""
+                            data-project-progress="0">
+                            <i class="ti-credit-card"></i> Pago</a>
+                        
+                        <!-- knowledgebase article -->
+                                                <a href="javascript:void(0)"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            data-toggle="modal" data-target="#commonModal" data-url="http://crm2.nacionalcode.tech/kb/create"
+                            data-loading-target="commonModalBody"
+                            data-modal-title="Crear un artículo de la base de conocimientos" data-action-url="http://crm2.nacionalcode.tech/kb"
+                            data-action-method="POST" data-action-ajax-loading-target="commonModalBody"
+                            data-save-button-class="">
+                            <i class="sl-icon-docs"></i> Artículo</a>
+                        
+                    </div>
+                </li>
+                
+
+                <!-- language -->
+                                <!--language -->
+
+
+                <!-- profile -->
+                <li class="nav-item dropdown u-pro">
+                    <a class="nav-link dropdown-toggle p-l-20 p-r-20 waves-dark profile-pic" href="javascript:void(0)"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" id="topnav_avatar" alt="user" class="" />
+                        <span class="hidden-md-down" id="topnav_username">Nacional
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                        <ul class="dropdown-user">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img"><img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png"
+                                            id="topnav_dropdown_avatar" alt="user"></div>
+                                    <div class="u-text">
+                                        <h4 id="topnav_dropdown_full_name">Nacional
+                                            Code</h4>
+                                        <p class="text-muted" id="topnav_dropdown_email">admin@nacionalcode.com</p>
+                                        <a href="javascript:void(0)"
+                                            class="btn btn-rounded btn-danger btn-sm edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                            data-toggle="modal" data-target="#commonModal"
+                                            data-url="http://crm2.nacionalcode.tech/user/avatar" data-loading-target="commonModalBody"
+                                            data-modal-size="modal-sm"
+                                            data-modal-title="Actualizar avatar"
+                                            data-header-visibility="hidden" data-header-extra-close-icon="visible"
+                                            data-action-url="http://crm2.nacionalcode.tech/user/avatar"
+                                            data-action-method="PUT">Actualizar avatar</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <!--my profile-->
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    data-toggle="modal" data-target="#commonModal"
+                                    data-url="http://crm2.nacionalcode.tech/contacts/1/edit?type=profile"
+                                    data-loading-target="commonModalBody"
+                                    data-modal-title="Actualizar mi perfil"
+                                    data-action-url="http://crm2.nacionalcode.tech/contacts/1" data-action-method="PUT"
+                                    data-action-ajax-class="" data-modal-size="modal-lg"
+                                    data-action-ajax-loading-target="team-td-container">
+                                    <i class="ti-user p-r-4"></i>
+                                    Actualizar mi perfil</a>
+                            </li>
+
+                            <!--my timesheets-->
+                                                        <li>
+                                <a href="http://crm2.nacionalcode.tech/timesheets/my">
+                                    <i class="ti-timer p-r-4"></i>
+                                    Mis hojas de tiempo</a>
+                            </li>
+                            
+                            
+                            <!--update notifcations-->
+                            <li>
+                                <a href="javascript:void(0)" id="topnavUpdateNotificationsButton"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    data-toggle="modal" data-target="#commonModal"
+                                    data-url="http://crm2.nacionalcode.tech/user/updatenotifications"
+                                    data-loading-target="commonModalBody"
+                                    data-modal-title="Configuración de las notificaciones"
+                                    data-action-url="http://crm2.nacionalcode.tech/user/updatenotifications" data-action-method="PUT"
+                                    data-modal-size="modal-lg" data-form-design="form-material"
+                                    data-header-visibility="hidden" data-header-extra-close-icon="visible"
+                                    data-action-ajax-class="js-ajax-ux-request"
+                                    data-action-ajax-loading-target="commonModalBody">
+                                    <i class="sl-icon-bell p-r-4"></i>
+                                    Configuración de las notificaciones</a>
+                            </li>
+
+                            <!--update password-->
+                            <li>
+                                <a href="javascript:void(0)" id="topnavUpdatePasswordButton"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    data-toggle="modal" data-target="#commonModal"
+                                    data-url="http://crm2.nacionalcode.tech/user/updatepassword" data-loading-target="commonModalBody"
+                                    data-modal-title="Actualiza contraseña"
+                                    data-action-url="http://crm2.nacionalcode.tech/user/updatepassword" data-action-method="PUT"
+                                    data-action-ajax-class="" data-modal-size="modal-sm"
+                                    data-form-design="form-material" data-header-visibility="hidden"
+                                    data-header-extra-close-icon="visible"
+                                    data-action-ajax-loading-target="commonModalBody">
+                                    <i class="ti-lock p-r-4"></i>
+                                    Actualiza contraseña</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="/logout">
+                                    <i class="fa fa-power-off p-r-4"></i> Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- /#profile -->
+            </ul>
+        </div>
+    </nav>
+
+
+</header> <!-- ============================================================== -->
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<aside class="left-sidebar" id="js-trigger-nav-team">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar" id="main-scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav" id="main-sidenav">
+            <ul id="sidebarnav">
+
+
+
+                <!--home-->
+                <li class="sidenav-menu-item active menu-tooltip menu-with-tooltip"
+                    title="Casa">
+                    <a class="waves-effect waves-dark" href="/home" aria-expanded="false" target="_self">
+                        <i class="ti-home"></i>
+                        <span class="hide-menu">Tablero
+                        </span>
+                    </a>
+                </li>
+                <!--home-->
+
+
+                <!--users-->
+                                <li class="sidenav-menu-item ">
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                        <i class="sl-icon-people"></i>
+                        <span class="hide-menu">Clientes
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                                                <li class="sidenav-submenu " id="submenu_clients">
+                            <a href="/clients"
+                                class="">Clientela</a>
+                        </li>
+                                                                        <li class="sidenav-submenu " id="submenu_contacts">
+                            <a href="/users"
+                                class="">Usuarios del cliente</a>
+                        </li>
+                                            </ul>
+                </li>
+                                <!--customers-->
+
+                <!--projects-->
+                                <li class="sidenav-menu-item ">
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                        <i class="ti-folder"></i>
+                        <span class="hide-menu">Proyectos
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                                                <li class="sidenav-submenu " id="submenu_projects">
+                            <a href="http://crm2.nacionalcode.tech/projects"
+                                class="">Proyectos</a>
+                        </li>
+                                                                        <li class="sidenav-submenu " id="submenu_project_templates">
+                            <a href="http://crm2.nacionalcode.tech/templates/projects"
+                                class="">Plantillas</a>
+                        </li>
+                                            </ul>
+                </li>
+                                <!--projects-->
+
+
+                <!--tasks-->
+                                <li class="sidenav-menu-item  menu-tooltip menu-with-tooltip"
+                    title="Tareas">
+                    <a class="waves-effect waves-dark" href="/tasks" aria-expanded="false" target="_self">
+                        <i class="ti-menu-alt"></i>
+                        <span class="hide-menu">Tareas
+                        </span>
+                    </a>
+                </li>
+                                <!--tasks-->
+
+                <!--leads-->
+                                <li class="sidenav-menu-item  menu-tooltip menu-with-tooltip"
+                    title="Guías">
+                    <a class="waves-effect waves-dark" href="/leads" aria-expanded="false" target="_self">
+                        <i class="sl-icon-call-in"></i>
+                        <span class="hide-menu">Guías
+                        </span>
+                    </a>
+                </li>
+                                <!--leads-->
+
+                <!--billing-->
+                                <li class="sidenav-menu-item ">
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                        <i class="ti-wallet"></i>
+                        <span class="hide-menu">Ventas
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                                                <li class="sidenav-submenu " id="submenu_invoices">
+                            <a href="/invoices"
+                                class=" ">Facturas</a>
+                        </li>
+                                                                        <li class="sidenav-submenu " id="submenu_payments">
+                            <a href="/payments"
+                                class=" ">Pagos</a>
+                        </li>
+                                                                        <li class="sidenav-submenu " id="submenu_estimates">
+                            <a href="/estimates"
+                                class=" ">Estimados</a>
+                        </li>
+                                                                        <li class="sidenav-submenu " id="submenu_products">
+                            <a href="/products"
+                                class=" ">Productos</a>
+                        </li>
+                                                                        <li class="sidenav-submenu " id="submenu_expenses">
+                            <a href="/expenses"
+                                class=" ">Gastos</a>
+                        </li>
+                                            </ul>
+                </li>
+                                <!--billing-->
+
+
+
+
+                <!--subscriptions-->
+                <li class="sidenav-menu-item  menu-tooltip menu-with-tooltip"
+                    title="Suscripciones">
+                    <a class="waves-effect waves-dark p-r-20" href="/subscriptions" aria-expanded="false"
+                        target="_self">
+                        <i class="sl-icon-layers"></i>
+                        <span class="hide-menu">Suscripciones
+                        </span>
+                    </a>
+                </li>
+
+
+                <!--tickets-->
+                                <li class="sidenav-menu-item  menu-tooltip menu-with-tooltip"
+                    title="Entradas">
+                    <a class="waves-effect waves-dark" href="/tickets" aria-expanded="false" target="_self">
+                        <i class="ti-comments"></i>
+                        <span class="hide-menu">Apoyo
+                        </span>
+                    </a>
+                </li>
+                                <!--tickets-->
+
+
+               <!--knowledgebase-->
+                                <li class="sidenav-menu-item  menu-tooltip menu-with-tooltip"
+                    title="Base de conocimientos">
+                    <a class="waves-effect waves-dark p-r-20" href="/knowledgebase" aria-expanded="false"
+                        target="_self">
+                        <i class="sl-icon-docs"></i>
+                        <span class="hide-menu">Base de conocimientos
+                        </span>
+                    </a>
+                </li>
+                                <!--knowledgebase-->
+
+
+                <!--team-->
+                                <li class="sidenav-menu-item ">
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                        <i class="ti-panel"></i>
+                        <span class="hide-menu">Otro
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="position-top collapse">
+                        <li class="sidenav-submenu mainmenu_team " id="submenu_team">
+                            <a href="/team"
+                                class="">Miembros del equipo</a>
+                        </li>
+                        <li class="sidenav-submenu mainmenu_timesheets "
+                            id="submenu_timesheets">
+                            <a href="/timesheets"
+                                class="">Hojas de horas</a>
+                        </li>
+                        <!--[UPCOMING]-->
+                        <li class="sidenav-submenu mainmenu_reports  hidden"
+                            id="submenu_reports">
+                            <a href="/reports"
+                                class="">Informes</a>
+                        </li>
+                    </ul>
+                </li>
+                                <!--team-->
+
+
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+        <!--top nav-->
+
+
+        <!--page wrapper-->
+        <div class="page-wrapper">
+
+            <!--overlay-->
+            <div class="page-wrapper-overlay js-toggle-side-panel hidden" data-target=""></div>
+            <!--overlay-->
+
+            <!--preloader-->
+            <div class="preloader">
+                <div class="loader">
+                    <div class="loader-loading"></div>
+                </div>
+            </div>
+            <!--preloader-->
+
+
+            <!-- main content -->
+            <!-- main content -->
+<div class="container-fluid">
+
+    <!--admin dashboard-->
+            <!--TOP STATS-->
+<div id="js-trigger-home-admin-wrapper">
+<div class="row">
+    <!--PAYMENTS TODAY-->
+    <!-- Todays Payments -->
+<div class="col-lg-3 col-md-6 click-url cursor-pointer"
+    data-url="http://crm2.nacionalcode.tech/payments/search?ref=list&amp;filter_payment_date_start=2022-09-15&amp;filter_payment_date_end=2022-09-15">
+    <div class="card">
+        <div class="card-body p-l-15 p-r-15">
+            <div class="d-flex p-10 no-block">
+                <span class="align-slef-center">
+                    <h2 class="m-b-0">$0.00</h2>
+                    <h6 class="text-muted m-b-0">Pagos -
+                        Hoy</h6>
+                </span>
+                <div class="align-self-center display-6 ml-auto"><i class="text-success icon-Credit-Card2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-success w-100 h-px-3" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+    </div>
+</div>
+    <!--PAYMENTS THIS MONTH-->
+    <!-- Payments - This month-->
+<div class="col-lg-3 col-md-6 click-url cursor-pointer" data-url="http://crm2.nacionalcode.tech/payments/search?ref=list&amp;filter_payment_date_start=2022-09-01&amp;filter_payment_date_end=2022-09-30">
+    <div class="card">
+        <div class="card-body p-l-15 p-r-15">
+            <div class="d-flex p-10 no-block">
+                <span class="align-slef-center">
+                    <h2 class="m-b-0">$0.00</h2>
+                    <h6 class="text-muted m-b-0">Pagos - Mes</h6>
+                </span>
+                <div class="align-self-center display-6 ml-auto"><i class="text-info icon-Credit-Card2"></i></div>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-info w-100 h-px-3" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+    </div>
+</div>
+    <!--INVOICES DUE-->
+    <!-- Invoice - Due-->
+<div class="col-lg-3 col-md-6 click-url cursor-pointer" data-url="http://crm2.nacionalcode.tech/invoices/search?ref=list&amp;filter_bill_status[]=due">
+    <div class="card">
+        <div class="card-body p-l-15 p-r-15">
+            <div class="d-flex p-10 no-block">
+                <span class="align-slef-center">
+                    <h2 class="m-b-0">$0.00</h2>
+                    <h6 class="text-muted m-b-0">Facturas - Debido</h6>
+                </span>
+                <div class="align-self-center display-6 ml-auto"><i class="text-warning icon-Coin"></i></div>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-warning w-100 h-px-3" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+    </div>
+</div>
+    <!--INVOICES OVERDUE-->
+    <!-- Invoice - Ovedue-->
+<div class="col-lg-3 col-md-6 click-url cursor-pointer" data-url="http://crm2.nacionalcode.tech/invoices/search?ref=list&amp;filter_bill_status[]=overdue">
+    <div class="card">
+        <div class="card-body p-l-15 p-r-15">
+            <div class="d-flex p-10 no-block">
+                <span class="align-slef-center">
+                    <h2 class="m-b-0">$0.00</h2>
+                    <h6 class="text-muted m-b-0">Facturas - Atrasado</h6>
+                </span>
+                <div class="align-self-center display-6 ml-auto"><i class="text-danger icon-Coins-2"></i></div>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-danger w-100 h-px-3" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+    </div>
+</div></div>
+<div class="row">
+
+    <!--INCOME-->
+    <div class="col-lg-8  col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex m-b-30">
+                    <h5 class="card-title m-b-0 align-self-center">Ingresos vs Gastos</h5>
+                    <div class="ml-auto align-self-center">
+                        <ul class="list-inline font-12">
+                            <li><span class="label label-success label-rounded"><i class="fa fa-circle"></i> Ingresos</span></li>
+                            <li><span class="label label-info label-rounded"><i class="fa fa-circle text-info"></i> Gastos</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="incomeexpenses ct-charts" id="admin-dhasboard-income-vs-expenses"></div>
+                <div class="row text-center">
+                    <div class="col-lg-4 col-md-4 m-t-20">
+                        <h2 class="m-b-0 font-light">2022</h2>
+                        <small>Período</small>
+                    </div>
+                    <div class="col-lg-4 col-md-4 m-t-20">
+                        <h2 class="m-b-0 font-light">$25,224.00</h2>
+                        <small>Ingresos</small>
+                    </div>
+                    <div class="col-lg-4 col-md-4 m-t-20">
+                        <h2 class="m-b-0 font-light">$6,000.00</h2>
+                        <small>Gastos</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--[DYNAMIC INLINE SCRIPT] - Backend Variables to Javascript Variables-->
+    <script>
+        NX.admin_home_chart_income = JSON.parse('["24.00","0","25200.00","0","0","0","0","0","0","0","0","0"]', true);
+        NX.admin_home_chart_expenses = JSON.parse('["0","0","6000.00","0","0","0","0","0","0","0","0","0"]', true);
+        NX.admin_home_c3_leads_title = "Guías";
+    </script>
+
+    <!--LEADS-->
+    <!-- Column -->
+    <div class="col-lg-4 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex m-b-30 no-block">
+                    <h5 class="card-title m-b-0 align-self-center">Guías</h5>
+                    <div class="ml-auto">
+                        Este año
+                    </div>
+                </div>
+                <div id="leadsWidget"></div>
+                <ul class="list-inline m-t-30 text-center font-12">
+                                        <li class="p-b-10"><span class="label label-default label-rounded"><i class="fa fa-circle text-default"></i> New</span></li>
+                                        <li class="p-b-10"><span class="label label-warning label-rounded"><i class="fa fa-circle text-warning"></i> Contacted</span></li>
+                                        <li class="p-b-10"><span class="label label-info label-rounded"><i class="fa fa-circle text-info"></i> Qualified</span></li>
+                                        <li class="p-b-10"><span class="label label-danger label-rounded"><i class="fa fa-circle text-danger"></i> Disqualified</span></li>
+                                        <li class="p-b-10"><span class="label label-lime label-rounded"><i class="fa fa-circle text-lime"></i> Proposal Sent</span></li>
+                                        <li class="p-b-10"><span class="label label-success label-rounded"><i class="fa fa-circle text-success"></i> Converted</span></li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--[DYNAMIC INLINE SCRIPT]  Backend Variables to Javascript Variables-->
+    <script>
+        NX.admin_home_c3_leads_data = JSON.parse('[["New",0],["Contacted",1],["Qualified",0],["Disqualified",1],["Proposal Sent",0],["Converted",0]]', true);
+        NX.admin_home_c3_leads_colors = JSON.parse('["#cccccc","#ff9041","#20aee3","#ff5c6c","#cddc39","#24d2b5"]', true);
+        NX.admin_home_c3_leads_title = "Guías";
+    </script>
+
+</div>
+<div class="row">
+
+    <!--TIMELINE-->
+    <div class="col-lg-8  col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Última actividad</h5>
+            <div class="dashboard-events profiletimeline" id="dashboard-admin-events">
+                                <!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">18 hours ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó un nuevo proyecto<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+<div class="x-description"><a
+                href="http://crm2.nacionalcode.tech/projects/25">Licencia Obra Nueva</a>
+</div>
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">1 month ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó un nuevo proyecto<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+<div class="x-description"><a
+                href="http://crm2.nacionalcode.tech/projects/24">plantilla uno</a>
+</div>
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">2 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Abrió un nuevo ticket de soporte<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+<div class="x-reference">
+        </div>
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+<div class="x-description"><a href="http://crm2.nacionalcode.tech/tickets/4">1</a>
+</div>
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">3 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 5
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">4 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 3
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">4 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 5
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">4 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 1
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó un nuevo proyecto<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+<div class="x-description"><a
+                href="http://crm2.nacionalcode.tech/projects/23">JOIN</a>
+</div>
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Te asignó una tarea<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+<a href="http://crm2.nacionalcode.tech/tasks/v/17/tarea1">
+        (Tarea
+        #17) -
+        tarea1</a>
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/2/dfgd">
+        (Dirigir #2) -
+        dfgd</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 7
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Te asignó una tarea<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+<a href="http://crm2.nacionalcode.tech/tasks/v/15/ere">
+        (Tarea
+        #15) -
+        ere</a>
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Publicado un nuevo comentario<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+<div class="x-reference">
+        <a href="http://crm2.nacionalcode.tech/projects/22/comments">
+                (Proyecto
+                #22) -
+                proyecto1</a></div>
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+<div class="x-description"><p>se agrego un comentario</p></div>
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó un nuevo proyecto<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+<div class="x-description"><a
+                href="http://crm2.nacionalcode.tech/projects/22">proyecto1</a>
+</div>
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó un nuevo proyecto<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+<div class="x-description"><a
+                href="http://crm2.nacionalcode.tech/projects/21">proyecto1</a>
+</div>
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">5 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó un nuevo proyecto<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+<div class="x-description"><a
+                href="http://crm2.nacionalcode.tech/projects/20">LANDING PAGE</a>
+</div>
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">8 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó una nueva estimación<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+<div class="x-description"><a href="http://crm2.nacionalcode.tech/estimates/3">Estimar - EST-000003</a>
+</div>
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">8 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Creó una nueva factura<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+<div class="x-description"><a href="http://crm2.nacionalcode.tech/invoices/10">Factura - INV-000010</a>
+</div>
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">9 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Publicado un nuevo comentario<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+<div class="x-description"><p>No contesta</p></div>
+
+<!--status-->
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">10 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 5
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+<!--each events item-->
+<div class="sl-item timeline">
+    <div class="sl-left">
+        <img src="http://crm2.nacionalcode.tech/storage/avatars/XXflROdidjinurxxBOmPowjsluQZDr17cbA5y96V/avatar.png" alt="user"
+            class="img-circle" />
+    </div>
+    <div class="sl-right">
+        <div>
+            <div class="x-meta"><a href="javascript:void(0)" class="link">
+                                    Nacional
+                            </a> <span class="sl-date">10 months ago</span>
+            </div>
+            <div class="x-title">
+                <!--assigned event - viewed by third party-->
+                                <span>Cambio de estado del cliente potencial<span>
+                                <!--do for project time lines-->
+                                <!--task resources (comment|checklists|files)-->
+
+
+<!--task (actual)-->
+
+
+<!--lead (all event types)-->
+<a href="http://crm2.nacionalcode.tech/leads/v/1/12345">
+        (Dirigir #1) -
+        12345</a>
+
+
+<!--project (invoices)-->
+
+
+<!--project (files)-->
+
+
+<!--project (estimates)-->
+
+
+<!--project (comments)-->
+
+
+<!--tickets-->
+                            </div>
+                        <!--attachment-->
+
+<!--comment-->
+
+<!--status-->
+<div class="x-description"><strong>Nuevo estado:</strong> 3
+</div>
+
+<!--file-->
+
+<!--task-->
+
+<!--tickets-->
+
+<!--invoice-->
+
+
+<!--estimate-->
+
+<!--project (..but do not show on project timeline)-->
+
+
+<!--subscription-->
+                    </div>
+    </div>
+</div>
+<!--each events item-->
+            </div>
+            <!--load more-->
+        </div>
+    </div>
+</div>
+    <!--COMMENTS-->
+
+    <!--PROJECTS-->
+    <div class="col-lg-4  col-md-12">
+    <div class="card">
+        <div class="card card-body mailbox m-b-0">
+            <h5 class="card-title">Proyectos</h5>
+            <div class="message-center dashboard-projects-admin">
+                <!-- not started -->
+                <a href="javascript:void(0)">
+                    <div class="btn label-default btn-circle">8</div>
+                    <div class="mail-contnet">
+                        <h5>No empezado</h5> <span class="mail-desc">Asignado a mí:
+                            <strong>2</strong></span>
+                    </div>
+                </a>
+
+                <!-- in progress -->
+                <a href="javascript:void(0)">
+                    <div class="btn btn-info btn-circle">0</div>
+                    <div class="mail-contnet">
+                        <h5>En progreso</h5> <span class="mail-desc">Asignado a mí:
+                            <strong>0</strong></span>
+                    </div>
+                </a>
+
+                <!-- on hold -->
+                <a href="javascript:void(0)">
+                    <div class="btn btn-warning btn-circle">0</div>
+                    <div class="mail-contnet">
+                        <h5>En espera</h5> <span class="mail-desc">Asignado a mí:
+                            <strong>0</strong></span>
+                    </div>
+                </a>
+
+
+                <!-- completed -->
+                <a href="javascript:void(0)">
+                    <div class="btn btn-success btn-circle">0</div>
+                    <div class="mail-contnet">
+                        <h5>Terminado</h5> <span class="mail-desc">Asignado a mí:
+                            <strong>0</strong></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div></div>        
+    
+
+
+</div>
+<!--main content -->
+            <!-- /#main content -->
+
+        </div>
+        <!--page wrapper-->
+    </div>
+
+    <!--common modals-->
+    <!--modal-->
+<div class="modal actions-modal" role="dialog" aria-labelledby="foo" id="actionsModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <form action="" method="post" id="actionsModalForm" class="form-horizontal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="actionsModalTitle"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <i class="ti-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="actionsModalBody">
+                    <!--dynamic content here-->
+
+                </div>
+                <div class="modal-footer" id="actionsModalFooter">
+                    <button type="button" class="btn btn-rounded-x btn-secondary waves-effect text-left" data-dismiss="modal">Cerca</button>
+                    <button type="submit" id="actionsModalButton" class="btn btn-rounded-x btn-danger waves-effect text-left js-ajax-ux-request" 
+                            data-url=""
+                            data-loading-target="actionsModalBody"
+                            data-ajax-type=""
+                            data-on-start-submit-button="disable">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--notes: see events.js for deails-->    <!--modal-->
+<div class="modal" role="dialog" aria-labelledby="foo" id="commonModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" id="commonModalContainer">
+        <form action="" method="post" id="commonModalForm" class="form-horizontal">
+            <div class="modal-content">
+                <div class="modal-header" id="commonModalHeader">
+                    <h4 class="modal-title" id="commonModalTitle"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                        id="commonModalCloseIcon">
+                        <i class="ti-close"></i>
+                    </button>
+                </div>
+                <!--optional button for when header is hidden-->
+                <span class="close x-extra-close-icon" data-dismiss="modal" aria-hidden="true"
+                    id="commonModalExtraCloseIcon">
+                    <i class="ti-close"></i>
+                </span>
+                <div class="modal-body min-h-200" id="commonModalBody">
+                    <!--dynamic content here-->
+                </div>
+                <div class="modal-footer" id="commonModalFooter">
+                    <button type="button" id="commonModalCloseButton" class="btn btn-rounded-x btn-secondary waves-effect text-left" data-dismiss="modal">Cerca</button>
+                    <button type="submit" id="commonModalSubmitButton"
+                        class="btn btn-rounded-x btn-danger waves-effect text-left" data-url="" data-loading-target=""
+                        data-ajax-type="POST" data-on-start-submit-button="disable">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--notes: see events.js for deails-->    <!--modal-->
+<div class="modal" role="dialog" aria-labelledby="plainModal" id="plainModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" id="plainModalContainer">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="plainModalTitle"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div class="modal-body min-h-200" id="plainModalBody">
+
+                <!--dynamic content here-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--notes: see events.js for deails-->    <!--modal-->
+<div class="modal" role="dialog" aria-labelledby="reloginModal" id="reloginModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" id="reloginModalContainer">
+        <form class="form-material form-horizontal" id="reloginForm">
+        <div class="modal-content">
+            <div class="modal-body relogin" id="reloginModalBody">
+
+                <div class="splash-image">
+                    <img src="http://crm2.nacionalcode.tech/public/images/relogin.png" alt="404 - Not found" />
+                </div>
+                <div class="splash-text">
+                    Tu sesión ha expirado. Por favor Iniciar sesión.
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control form-control-sm" id="email" name="email"
+                            placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control form-control-sm" id="password" name="password"
+                            placeholder="Contraseña">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="reloginModalButton" class="btn btn-rounded btn-info waves-effect text-left"
+                    data-url="http://crm2.nacionalcode.tech/login?action=relogin" data-loading-target="reloginModalBody" data-ajax-type="POST"
+                    data-on-start-submit-button="disable">Registrarse</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+    <!--selector - modals-->
+    <!--modal-->
+<div class="modal create-modal" role="dialog" aria-labelledby="foo" id="createModal">
+    <div class="modal-dialog">
+        <form action="" method="post" id="selectorModalForm" class="form-horizontal">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="createModalCloseIcon">
+                    <i class="ti-close"></i>
+                </button>
+                <div class="create-modal-body">
+
+
+                    <!--LEFT SIDE-->
+                    <div class="create-modal-section section-left ">
+                        <div class="x-heading">
+                            <h3 id="create-modal-splash-text">
+                                <!-- dynamic title-->
+                            </h3>
+                        </div>
+                        <div class="x-option">
+                            <div class="form-group form-group-checkbox row">
+                                <input name="group5" type="radio" id="client_type_existing"
+                                    data-target-container="option-existing-client-container" checked
+                                    class="with-gap radio-col-blue create-modal-selector">
+                                <label for="client_type_existing"><span
+                                        class="x-label-text">Cliente existente</span></label>
+                            </div>
+                        </div>
+                        <div class="x-option">
+                            <div class="form-group form-group-checkbox row">
+                                <input name="group5" type="radio" id="client_type_new"
+                                    data-target-container="option-new-client-container"
+                                    class="with-gap radio-col-blue create-modal-selector">
+                                <label for="client_type_new"><span
+                                        class="x-label-text">Cliente nuevo</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--RIGHT SIZE-->
+                    <div class="create-modal-section section-right" id="create-modal-section-right">
+
+                        <!--EXISTING CLIENT-->
+                        <div id="option-existing-client-container" class="create-modal-option-contaiers hidden">
+
+                            <div class="form-group row">
+                                <label
+                                    class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">Cliente*</label>
+                                <div class="col-sm-12 col-lg-9">
+                                    <!--select2 basic search-->
+                                    <select name="bill_clientid" id="bill_clientid"
+                                        class="clients_and_projects_toggle form-control form-control-sm js-select2-basic-search-modal select2-hidden-accessible"
+                                        data-projects-dropdown="bill_projectid"
+                                        data-feed-request-type="clients_projects"
+                                        data-ajax--url="http://crm2.nacionalcode.tech/feed/company_names">
+                                    </select>
+                                    <!--select2 basic search-->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!--projects-->
+                            <div class="form-group row">
+                                <label
+                                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">Proyecto</label>
+                                <div class="col-sm-12 col-lg-9">
+                                    <select class="select2-basic form-control form-control-sm dynamic_bill_projectid"
+                                        id="bill_projectid" name="bill_projectid" disabled>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!--continue button-->
+                            <div class="text-right p-t-30">
+                                <button type="submit" id="submitButton"
+                                    class="btn btn-info waves-effect text-left js-ajax-request" data-url=""
+                                    data-loading-target="create-modal-section-right"
+                                    disabled>Seguir</button>
+                            </div>
+                        </div>
+
+
+                        <!--NEW CLIENT-->
+                        <div id="option-new-client-container" class="create-modal-option-contaiers">
+
+                            <div class="form-group row">
+                                <label
+                                    class="col-sm-12 col-lg-4 text-left control-label col-form-label required">nombre de empresa*</label>
+                                <div class="col-sm-12 col-lg-8">
+                                    <input type="text" class="form-control form-control-sm" id="client_company_name"
+                                        name="client_company_name" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label
+                                    class="col-sm-12 col-lg-4 text-left control-label col-form-label required">Primer nombre*</label>
+                                <div class="col-sm-12 col-lg-8">
+                                    <input type="text" class="form-control form-control-sm" id="first_name"
+                                        name="first_name" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label
+                                    class="col-sm-12 col-lg-4 text-left control-label col-form-label required">Apellido*</label>
+                                <div class="col-sm-12 col-lg-8">
+                                    <input type="text" class="form-control form-control-sm" id="last_name"
+                                        name="last_name" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label
+                                    class="col-sm-12 col-lg-4 text-left control-label col-form-label required">Dirección de correo electrónico*</label>
+                                <div class="col-sm-12 col-lg-8">
+                                    <input type="text" class="form-control form-control-sm" id="email" name="email"
+                                        placeholder="">
+                                </div>
+                            </div>
+
+                            <!--[dynamic button]-->
+                            <span class="hidden edit-add-modal-button js-ajax-ux-request reset-target-modal-form" id="create-new-client-dynamic-button"
+                                data-toggle="modal" data-target="#commonModal"
+                                data-url="--dynamic--"
+                                data-loading-target="commonModalBody" data-modal-title="--dynamic--"
+                                data-action-url="--dynamic--" data-action-method="POST"
+                                data-action-ajax-loading-target="commonModalBody"
+                                data-loading-target="create-modal-section-right"></span>
+
+                            <!--continue button-->
+                            <div class="text-right p-t-30">
+                                <button type="submit" id="create-new-client-button"
+                                    class="btn btn-info waves-effect text-left js-ajax-request" data-url=""
+                                    data-type="form" data-form-id="option-new-client-container" data-ajax-type="POST"
+                                    data-loading-target="create-modal-section-right"
+                                    data-on-start-submit-button="disable">Crear nuevo cliente</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="create-modal-section section-right hidden" id="create-modal-section-content">
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <!--js footer-->
+    <!--ALL THIRD PART JAVASCRIPTS-->
+<script src="public/vendor/js/vendor.footer.js?v=2021-05-11"></script>
+
+<!--nextloop.core.js-->
+<script src="public/js/core/ajax.js?v=2021-05-11"></script>
+
+<!--MAIN JS - AT END-->
+<script src="public/js/core/boot.js?v=2021-05-11"></script>
+
+<!--EVENTS-->
+<script src="public/js/core/events.js?v=2021-05-11"></script>
+
+<!--CORE-->
+<script src="public/js/core/app.js?v=2021-05-11"></script>
+
+<!--BILLING-->
+<script src="public/js/core/billing.js?v=2021-05-11"></script>
+
+<!--project page charts-->
+
+    <!--js automations-->
+    <!--flash messages-->
+
+<!--flash messages longer duration-->
+
+
+<!--force user password change-->
+
+<!--polling - general data [only when debug mode is disabled, else it resets the debug toolbar]-->
+<span id="js-trigger-general-polling" class="hidden" data-progress-bar='hidden' data-loading-target="hidden"
+    data-skip-checkboxes-reset="TRUE" data-url="http://crm2.nacionalcode.tech/polling/general"></span>
+
+
+
+<!--poll timers (every 60 seconds)-->
+<span id="js-trigger-general-timers" class="hidden" data-type="form" data-progress-bar='hidden' data-notifications="disabled"
+    data-skip-checkboxes-reset="TRUE" data-form-id="tasks-view-wrapper" data-ajax-type="post"
+    data-url="http://crm2.nacionalcode.tech/polling/timers?ref=list"></span>
+
+<!--dynamic load - a expense-->
+
+
+<!--updates - updating modals-->
+
+    <!--[note: no sanitizing required] for this trusted content, which is added by the admin-->
+    
+</body>
+
+</html>
